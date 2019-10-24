@@ -41,12 +41,12 @@ class _HomeState extends State<Home> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(54.0),
         child: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Color(0xFF9254DE),
-          title: Center(
-            child: new Text(_tabName,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          ),
+          centerTitle: true,
+          title: Text(_tabName,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
         ),
       ),
       body: Center(
