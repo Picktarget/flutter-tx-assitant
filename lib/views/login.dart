@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tx_assitant/styles/input.dart';
-import 'package:tx_assitant/views/home.dart';
 
 import '../main.dart';
 
@@ -17,7 +16,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     final logo = new Padding(
-      padding: EdgeInsets.only(bottom: 60),
+      padding: EdgeInsets.symmetric(vertical: 60),
       child: new Center(
           child: Image.asset(
         'images/logo.png',
@@ -108,48 +107,54 @@ class _LoginState extends State<Login> {
       ),
     );
     return Scaffold(
+      appBar: AppBar(
+        title: Text('登录'),
+        automaticallyImplyLeading: false,
+        backgroundColor: Color(0xFF9254DE),
+        centerTitle: true,
+      ),
       backgroundColor: Colors.white,
-      body: Center(
+      body: SingleChildScrollView(
         child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  logo,
-                  username,
-                  SizedBox(height: 14.0),
-                  password,
-                  submitBtn,
-                  SizedBox(
-                    width: 200,
-                    height: 26.0,
-                    child: FlatButton(
-                      onPressed: null,
-                      padding: EdgeInsets.all(4.0),
-                      child: Text('注册账号', style: TextStyle(color: primary)),
-                    ),
+            key: _formKey,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                logo,
+                username,
+                SizedBox(height: 14.0),
+                password,
+                submitBtn,
+                SizedBox(
+                  width: 200,
+                  height: 26.0,
+                  child: FlatButton(
+                    onPressed: null,
+                    padding: EdgeInsets.all(4.0),
+                    child: Text('注册账号', style: TextStyle(color: primary)),
                   ),
-                  SizedBox(
-                    width: 200,
-                    height: 26.0,
-                    child: FlatButton(
-                      onPressed: null,
-                      padding: EdgeInsets.all(4.0),
-                      child: Text('忘记密码', style: TextStyle(color: primary)),
-                    ),
+                ),
+                SizedBox(
+                  width: 200,
+                  height: 26.0,
+                  child: FlatButton(
+                    onPressed: null,
+                    padding: EdgeInsets.all(4.0),
+                    child: Text('忘记密码', style: TextStyle(color: primary)),
                   ),
-                  SizedBox(
-                    width: 200,
-                    height: 26.0,
-                    child: FlatButton(
-                      onPressed: null,
-                      padding: EdgeInsets.all(4.0),
-                      child: Text('在线客服', style: TextStyle(color: primary)),
-                    ),
+                ),
+                SizedBox(
+                  width: 200,
+                  height: 26.0,
+                  child: FlatButton(
+                    onPressed: null,
+                    padding: EdgeInsets.all(4.0),
+                    child: Text('在线客服', style: TextStyle(color: primary)),
                   ),
-                ],
-              )),
+                ),
+              ],
+            )),
       ),
     );
   }
